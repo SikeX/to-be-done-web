@@ -22,7 +22,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "craco build && git add . && git commit -m uiupdate && git push origin master && git subtree push --prefix=build origin gh-pages"
   },
   "eslintConfig": {
     "extends": [
