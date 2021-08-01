@@ -9,20 +9,20 @@ const Login = () => {
                 </div>
                 <div className='flex flex-col justify-center'>
                     <div className='font-serif font-bold text-green-600 text-xl'
-                        style={{'font-Family':'JelleeBold'}}>ToBeDone</div>
+                        style={{'fontFamily':'JelleeBold'}}>ToBeDone</div>
                 </div>
             </div>
 
             <div className='mx-auto mt-3 font-semibold'>Get Everything Organized</div>
 
-            <div className='flex flex-col mx-auto mt-12 md:mt-8 px-4 py-5 bg-white 
+            <div className='flex flex-col mx-auto mt-12 md:mt-8 px-5 py-5 bg-white 
                 content-center rounded-xl shadow-lg'>
                 <div className='mx-auto font-semibold'>Sign in</div>
                 <form className='flex flex-col py-2 space-y-2 text-gray-500'>
                     <div>username</div>
-                    <input className='border border-blue-400 rounded-md px-2' />
+                    <input className='border border-blue-400 rounded-md py-1 px-2' />
                     <div>password</div>
-                    <input className='border border-blue-400 rounded-md px-2' />
+                    <input className='border border-blue-400 rounded-md py-1 px-2' />
                     <div className='flex content-center'>
                         <input className='border border-blue-400 my-auto' type='checkbox' />
                         <label className='text-blue-500 text-sm px-1'>Remenber me</label>
