@@ -17,7 +17,7 @@ const TaskList = () => {
 
     return (
         <div id='task-list' 
-            className='flex flex-col content-center h-full 
+            className='flex flex-col content-center h-4/5 md:h-full 
             w-full mx-auto px-3 min-h-0' >
             <div className='flex flex-col h-full w-full py-3 divide-y-2 divide-solid 
             text-sm divide-gray-300 min-h-0'>

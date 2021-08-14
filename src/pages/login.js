@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const SignUp = ({change}) => {
 
     return (
-        <div className='flex flex-col mx-auto mt-12 md:mt-8 px-5 py-5 bg-white 
+        <div className='flex flex-col m-auto px-5 py-5 bg-white 
                 content-center rounded-xl shadow-lg'>
             <div className='mx-auto font-semibold'>Sign up</div>
             <form className='flex flex-col py-2 space-y-2 text-gray-500'>
@@ -30,7 +30,7 @@ const SignUp = ({change}) => {
 
 const SignIn = ({change}) => {
     return (
-        <div className='flex flex-col mx-auto mt-12 md:mt-8 px-5 py-5 bg-white 
+        <div className='flex flex-col m-auto px-5 py-5 bg-white 
         content-center rounded-xl shadow-lg'>
             <div className='mx-auto font-semibold'>Sign in</div>
                 <form className='flex flex-col py-2 space-y-2 text-gray-500'>
@@ -62,7 +62,7 @@ const Login = () => {
 
     const changeSign = () => setSignup(!signup)
     return (
-        <div id='loginpage' className='min-h-screen w-full flex flex-col content-center py-20 md:py-10'>
+        <div id='loginpage' className='min-h-screen h-screen w-full flex flex-col content-center py-20 md:py-10'>
             <div className='flex justify-center space-x-2'>
                 <div>
                     <img className='max-w-full h-auto' src="https://img.icons8.com/office/40/000000/tomato.png" alt='tomato' />
@@ -77,7 +77,7 @@ const Login = () => {
             
             {signup ? <SignUp change={changeSign} /> : <SignIn change={changeSign} />}
 
-            <div className='relative text-center whitespace-normal text-sm mx-auto px-3 py-20 text-gray-500'>
+            <div className='text-center whitespace-normal text-sm mx-auto px-3 py-5 text-gray-500'>
                 If you have any quesion or suggestion please send email to
                 <a className='hover:underline text-blue-500' href='mailto:yoloxzx@outlook.com'> yoloxzx@outlook.com</a>
             </div>
