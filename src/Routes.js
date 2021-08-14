@@ -1,10 +1,9 @@
 import React from 'react'
-import App from './App'
 import Login from './pages/login'
 import About from './pages/about'
 import Todo from './pages/todo'
 
-import createHistory from 'history/createBrowserHistory'
+// import createHistory from 'history/createBrowserHistory'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 

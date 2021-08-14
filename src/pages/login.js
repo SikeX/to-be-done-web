@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 
 const SignUp = ({change}) => {
 
@@ -45,7 +46,7 @@ const SignIn = ({change}) => {
                     </div>
                     <div className='flex justify-between pt-2'>
                         <button className='hover:bg-blue-700 hover:text-white bg-green-300 
-                        rounded-md text-black px-2 py-1'>Sign In</button>
+                        rounded-md text-black px-2 py-1'><Link to='/todo'>Sign In</Link></button>
                         <button className='hover:bg-blue-700 hover:text-white border border-black bg-white-300 
                         rounded-md text-black px-2 py-1'
                         onClick={change}
