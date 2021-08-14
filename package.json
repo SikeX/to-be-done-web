@@ -12,6 +12,7 @@
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.36",
     "react": "^17.0.2",
+    "react-div-100vh": "^0.6.0",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
