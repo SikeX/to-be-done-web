@@ -5,7 +5,7 @@ import TaskStat from '../components/taskStat'
 
 const Todo = () => {
     return (
-        <div className='flex h-full'>
+        <div className='fixed flex h-screen w-screen'>
             <div className='flex flex-col h-screen w-full bg-blue-100
             md:bg-white md:w-1/5'>
                 <Banner />
