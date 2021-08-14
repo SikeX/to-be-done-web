@@ -19,3 +19,7 @@
       background-position: 0% 50%;
     }
 }
+
+html,body{
+  height:-webkit-fill-available;
+}
