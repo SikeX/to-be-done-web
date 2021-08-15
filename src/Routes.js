@@ -4,7 +4,7 @@ import About from './pages/about'
 import Todo from './pages/todo'
 
 import createHistory from 'history/createHashHistory'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import {Router, Route, Switch } from 'react-router-dom';
 
 const history = createHistory()
 
