@@ -12,7 +12,13 @@ const postTaskList = async (task) => {
     return result
 }
 
+const postTodo = async (taskname, todo) => {
+    const result = axios.post(`${baseUrl}/${taskname}`,todo)
+    return result
+}
+
 export default {
     getAll: getAll,
-    postTaskList: postTaskList
+    postTaskList: postTaskList,
+    postTodo: postTodo
 }
