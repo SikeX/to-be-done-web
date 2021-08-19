@@ -26,10 +26,22 @@ const TaskContent = ({taskName}) => {
         setTodoName(event.target.value)
     }
     
-    const submitTodoList = (event) => {
+    const submitTodoList = async (event) => {
         event.preventDefault()
-        setTodoList(todoList.concat(todoName))
-        setTodoName('')
+        const todo = {
+            todoName: todoName,
+            important: false,
+            myday: false,
+            done: false
+        }
+        
+        try {
+            await service.postTodo(todo)
+            setTodoList(todoList.concat(todoName))
+            setTodoName('')
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (

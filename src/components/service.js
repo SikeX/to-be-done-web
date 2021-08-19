@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:3004'
+const baseUrl = 'http://localhost:3004/api'
 
 const getAll = async () => {
     const result = await axios.get(baseUrl)
@@ -12,8 +12,8 @@ const postTaskList = async (task) => {
     return result
 }
 
-const postTodo = async (taskname, todo) => {
-    const result = axios.post(`${baseUrl}/${taskname}`,todo)
+const postTodo = async (todo) => {
+    const result = axios.post(`${baseUrl}/Tasks/todo`,todo)
     return result
 }
 
