@@ -1,19 +1,48 @@
 import {MyDay, Important, All, TaskItem } from '../components/taskItem'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import service from './service'
 
-const TaskList = ({getTask, getTaskObject}) => {
+const TaskList = ({getTask}) => {
     const [ taskName, setTaskName ] = useState('')
     const [ taskList, setTaskList ] = useState([])
+
+    console.log(taskList)
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = service.getAll()
+                const allTasks = await response
+                setTaskList(allTasks.Tasks.filter(task => task.system === false))
+                console.log(taskList)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        fetchData()
+    },[])
 
     const handleChange = (event) => {
         setTaskName(event.target.value)
     }
 
-    const submitList = (event) => {
+    const submitList = async (event) => {
         event.preventDefault()
-        setTaskList(taskList.concat(taskName))
-        getTaskObject({[taskName]:[]})
-        setTaskName('')
+        const task = {
+            "taskName":taskName,
+            "system":false,
+            "taskList":[]
+        }
+
+        try {
+            await service.postTaskList(task)
+            setTaskList(taskList.concat(task))
+            console.log(taskList)
+            setTaskName('')
+        } catch (err) {
+            console.log(err)
+        }
+        
     }
 
     return (
@@ -28,7 +57,9 @@ const TaskList = ({getTask, getTaskObject}) => {
                     <All getTask={getTask}/>
                 </div>
                 <div className='flex flex-col h-full py-2 overflow-auto'>
-                    {taskList.map(task => <TaskItem taskName={task} 
+                    {taskList.map((task,index) => <TaskItem 
+                    key={index}
+                    taskName={task.taskName} 
                     getTask={getTask} />)}
                 </div>
             </div>

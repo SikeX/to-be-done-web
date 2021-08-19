@@ -45,8 +45,8 @@ const SignIn = ({change}) => {
                         <label className='text-blue-500 text-sm px-1'>Remenber me</label>
                     </div>
                     <div className='flex justify-between pt-2'>
-                        <button className='hover:bg-blue-700 hover:text-white bg-green-300 
-                        rounded-md text-black px-2 py-1'><Link to='/todo'>Sign In</Link></button>
+                        <button className='transition duration-500 hover:shadow-lg hover:bg-blue-700 hover:text-white bg-green-300 
+                        rounded-md text-black px-3 py-1'><Link to='/todo'>Sign In</Link></button>
                         <button className='hover:bg-blue-700 hover:text-white border border-black bg-white-300 
                         rounded-md text-black px-2 py-1'
                         onClick={change}

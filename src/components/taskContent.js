@@ -1,11 +1,26 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import TodoItem from '../components/todoitem'
+import service from './service'
 
-const TaskContent = ({taskName, getTaskObject,allTask}) => {
+const TaskContent = ({taskName}) => {
     const [todoName, setTodoName] = useState('')
-    const [todoList, setTodoList] = useState(allTask[taskName])
+    const [todoList, setTodoList] = useState([])
 
-    console.log('todolist',todoList)
+    useEffect(() => {
+        const fetchData = async () => {
+            try{
+                const response = await service.getAll()
+                console.log(response.Tasks)
+                console.log(taskName);
+                const foundTask = response.Tasks.find(task => task.taskName === taskName)
+                console.log(foundTask.taskList)
+                setTodoList(foundTask.taskList)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        fetchData()
+    },[taskName])
 
     const handleChange = (event) => {
         setTodoName(event.target.value)
@@ -14,7 +29,6 @@ const TaskContent = ({taskName, getTaskObject,allTask}) => {
     const submitTodoList = (event) => {
         event.preventDefault()
         setTodoList(todoList.concat(todoName))
-        getTaskObject({[taskName]:todoList})
         setTodoName('')
     }
 
@@ -24,7 +38,12 @@ const TaskContent = ({taskName, getTaskObject,allTask}) => {
             min-h-0 py-4 px-10'>
             <div className='text-2xl py-4'>{taskName}</div>
             <div className='flex flex-col h-full space-y-2 min-h-0 overflow-y-auto px-1'>
-                {todoList.map(todo => <TodoItem name={todo} />)}
+                {todoList.map((todo, index) => <TodoItem 
+                key={index+todo}
+                name={todo.todoName}
+                done={todo.done}
+                important={todo.important}
+                myday={todo.myday} />)}
             </div>
             <form className='flex space-x-2 my-2'
             onSubmit={submitTodoList}>
