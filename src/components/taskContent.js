@@ -9,12 +9,11 @@ const TaskContent = ({taskName}) => {
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const response = await service.getAll()
-                console.log(response.Tasks)
+                const response = await service.getTodoList(taskName)
+                console.log(response)
                 console.log(taskName);
-                const foundTask = response.Tasks.find(task => task.taskName === taskName)
-                console.log(foundTask.taskList)
-                setTodoList(foundTask.taskList)
+                console.log(response.taskList)
+                setTodoList(response.taskList)
             } catch (err) {
                 console.log(err)
             }
@@ -36,8 +35,8 @@ const TaskContent = ({taskName}) => {
         }
         
         try {
-            await service.postTodo(todo)
-            setTodoList(todoList.concat(todoName))
+            await service.postTodo(taskName,todo)
+            setTodoList(todoList.concat(todo))
             setTodoName('')
         } catch (err) {
             console.log(err)

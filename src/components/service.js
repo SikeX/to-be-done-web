@@ -7,18 +7,24 @@ const getAll = async () => {
     return result.data
 }
 
+const getTodoList = async (todo) => {
+    const result = await axios.get(`${baseUrl}/${todo}`)
+    return result.data
+}
+
 const postTaskList = async (task) => {
     const result = axios.post(`${baseUrl}/Tasks`,task)
     return result
 }
 
-const postTodo = async (todo) => {
-    const result = axios.post(`${baseUrl}/Tasks/todo`,todo)
+const postTodo = async (taskName,todo) => {
+    const result = axios.post(`${baseUrl}/Tasks/${taskName}`,todo)
     return result
 }
 
 export default {
     getAll: getAll,
+    getTodoList: getTodoList,
     postTaskList: postTaskList,
     postTodo: postTodo
 }
