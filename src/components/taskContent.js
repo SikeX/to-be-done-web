@@ -46,7 +46,7 @@ const TaskContent = ({taskName}) => {
 
     return (
         <div id='task-content'
-            className='hidden md:flex md:w-2/3 lg:w-1/2 flex-grow flex-col h-full bg-indigo-200 
+            className='hidden md:flex md:w-2/3 lg:w-1/2 flex-grow flex-col h-full bg-indigo-50 
             min-h-0 py-4 px-10'>
             <div className='text-2xl py-4'>{taskName}</div>
             <div className='flex flex-col h-full space-y-2 min-h-0 overflow-y-auto px-1'>
