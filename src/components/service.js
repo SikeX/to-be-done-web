@@ -22,9 +22,15 @@ const postTodo = async (taskName,todo) => {
     return result
 }
 
+const deleteTodo = async (taskName) => {
+    const result = axios.delete(`${baseUrl}/Tasks/${taskName}`)
+    return result
+}
+
 export default {
     getAll: getAll,
     getTodoList: getTodoList,
     postTaskList: postTaskList,
-    postTodo: postTodo
+    postTodo: postTodo,
+    deleteTodo: deleteTodo
 }
